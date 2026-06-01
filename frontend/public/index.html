@@ -4,32 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LF Barn – American Lifestyle</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:wght@400;700&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:wght@700;900&family=IM+Fell+English:ital@0;1&family=Oswald:wght@400;500;700&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="/" class="nav-logo"><img src="/images/logo.png" alt="LF Barn" class="nav-logo-img"> <span>LF BARN</span></a>
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png" alt="LF Barn" class="nav-logo-img">
+    <span>LF BARN</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#produtos">Produtos</a></li>
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#como-comprar">Como Comprar</a></li>
   </ul>
-  <a href="https://wa.me/5544999769485" target="_blank" class="nav-cta">
-    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.508 5.835L.057 23.529c-.044.175.005.358.132.49.093.097.218.15.346.15.054 0 .108-.009.16-.026l5.868-1.529A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.96 0-3.81-.54-5.395-1.475l-.387-.23-4.01 1.046 1.003-3.908-.252-.4A9.78 9.78 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182S21.818 6.579 21.818 12 17.421 21.818 12 21.818z"/></svg>
-    WhatsApp
+  <a href="https://wa.me/5544999769485" target="_blank" class="nav-stamp">
+    <span class="stamp-inner">Importação<br>Exclusiva EUA</span>
   </a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg-pattern"></div>
+  <!-- US Flag SVG background -->
+  <div class="hero-flag">
+    <div class="flag-stripes">
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div><div class="stripe white"></div>
+      <div class="stripe red"></div>
+    </div>
+    <div class="flag-canton">
+      <div class="stars-grid">
+        <!-- 50 stars via CSS -->
+      </div>
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+
   <div class="hero-content">
-    <div class="hero-badge">★ Importação Exclusiva dos EUA ★</div>
+    <div class="hero-badge-wrap">
+      <div class="hero-badge">★ Since America ★</div>
+    </div>
     <img src="/images/logo.png" alt="LF Barn" class="hero-logo">
-    <p class="hero-sub">Peças originais americanas direto dos Estados Unidos</p>
+    <div class="saloon-board hero-tagline">
+      <div class="board-inner">
+        <span>Peças Originais dos Estados Unidos</span>
+      </div>
+    </div>
     <div class="hero-tags">
       <span>🏕️ Outdoor</span>
       <span>🐂 Ranch</span>
@@ -37,52 +63,54 @@
       <span>🇺🇸 Lifestyle</span>
     </div>
     <div class="hero-actions">
-      <a href="#produtos" class="btn-primary">Ver Produtos</a>
+      <a href="#produtos" class="btn-western">Ver Produtos</a>
       <a href="https://wa.me/5544999769485" target="_blank" class="btn-wpp">
         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.508 5.835L.057 23.529c-.044.175.005.358.132.49.093.097.218.15.346.15.054 0 .108-.009.16-.026l5.868-1.529A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.96 0-3.81-.54-5.395-1.475l-.387-.23-4.01 1.046 1.003-3.908-.252-.4A9.78 9.78 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182S21.818 6.579 21.818 12 17.421 21.818 12 21.818z"/></svg>
-        Comprar via WhatsApp
+        Peça no WhatsApp
       </a>
     </div>
   </div>
-  <div class="hero-scroll-hint">↓</div>
+  <div class="hero-scroll-hint">✦ ✦ ✦</div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>🏕️ Outdoor Gear</span><span class="sep">★</span>
-    <span>🐂 Ranch Life</span><span class="sep">★</span>
-    <span>🎣 Fishing</span><span class="sep">★</span>
-    <span>🇺🇸 American Lifestyle</span><span class="sep">★</span>
-    <span>📦 Importação Exclusiva EUA</span><span class="sep">★</span>
-    <span>✅ Peças 100% Originais</span><span class="sep">★</span>
-    <span>🏕️ Outdoor Gear</span><span class="sep">★</span>
-    <span>🐂 Ranch Life</span><span class="sep">★</span>
-    <span>🎣 Fishing</span><span class="sep">★</span>
-    <span>🇺🇸 American Lifestyle</span><span class="sep">★</span>
-    <span>📦 Importação Exclusiva EUA</span><span class="sep">★</span>
-    <span>✅ Peças 100% Originais</span><span class="sep">★</span>
+    <span>★ OUTDOOR GEAR</span><span class="sep">✦</span>
+    <span>★ RANCH LIFE</span><span class="sep">✦</span>
+    <span>★ FISHING</span><span class="sep">✦</span>
+    <span>★ AMERICAN LIFESTYLE</span><span class="sep">✦</span>
+    <span>★ IMPORTAÇÃO EXCLUSIVA EUA</span><span class="sep">✦</span>
+    <span>★ PEÇAS 100% ORIGINAIS</span><span class="sep">✦</span>
+    <span>★ OUTDOOR GEAR</span><span class="sep">✦</span>
+    <span>★ RANCH LIFE</span><span class="sep">✦</span>
+    <span>★ FISHING</span><span class="sep">✦</span>
+    <span>★ AMERICAN LIFESTYLE</span><span class="sep">✦</span>
+    <span>★ IMPORTAÇÃO EXCLUSIVA EUA</span><span class="sep">✦</span>
+    <span>★ PEÇAS 100% ORIGINAIS</span><span class="sep">✦</span>
   </div>
 </div>
 
 <!-- PRODUCTS -->
 <section id="produtos" class="section">
   <div class="container">
-    <p class="section-label">Catálogo</p>
-    <h2 class="section-title">Produtos em Destaque</h2>
-    <div class="section-line"></div>
+    <div class="saloon-title-wrap">
+      <div class="saloon-board section-board">
+        <div class="board-inner">
+          <span class="board-label">Catálogo</span>
+          <h2 class="board-title">Produtos em Destaque</h2>
+        </div>
+      </div>
+    </div>
 
-    
-    <!-- Search Bar -->
     <div class="search-wrap">
       <div class="search-box">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="search-input" placeholder="Buscar produto... (ex: chapéu, bota, pesca)" autocomplete="off">
+        <input type="text" id="search-input" placeholder="Buscar produto..." autocomplete="off">
         <button id="search-clear" style="display:none" onclick="clearSearch()">✕</button>
       </div>
     </div>
 
-    <!-- Filters -->
     <div class="filters">
       <button class="filter-btn active" data-cat="">Todos</button>
       <button class="filter-btn" data-cat="Outdoor">🏕️ Outdoor</button>
@@ -105,13 +133,16 @@
   <div class="container">
     <div class="sobre-grid">
       <div class="sobre-visual">
-        <img src="/images/logo.png" alt="LF Barn" style="width:80%;opacity:0.9;">
+        <img src="/images/logo.png" alt="LF Barn" style="width:75%; mix-blend-mode:screen;">
         <div class="sobre-badge">Est. EUA</div>
       </div>
       <div>
-        <p class="section-label">Sobre a LF Barn</p>
-        <h2 class="section-title">O jeito americano de viver</h2>
-        <div class="section-line"></div>
+        <div class="saloon-board section-board section-board--left">
+          <div class="board-inner">
+            <span class="board-label">Sobre a LF Barn</span>
+            <h2 class="board-title">O jeito americano<br>de viver</h2>
+          </div>
+        </div>
         <p class="section-desc">Somos apaixonados pelo estilo de vida americano — do campo aberto às pescarias ao amanhecer. Trazemos peças originais direto dos Estados Unidos com importação exclusiva, para quem vive esse lifestyle de verdade.</p>
         <div class="stats">
           <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Peças Originais</div></div>
@@ -127,9 +158,14 @@
 <!-- COMO COMPRAR -->
 <section id="como-comprar" class="section como-section">
   <div class="container">
-    <p class="section-label">Passo a passo</p>
-    <h2 class="section-title">Como Comprar</h2>
-    <div class="section-line"></div>
+    <div class="saloon-title-wrap">
+      <div class="saloon-board section-board">
+        <div class="board-inner">
+          <span class="board-label">Passo a passo</span>
+          <h2 class="board-title">Como Comprar</h2>
+        </div>
+      </div>
+    </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-icon">👀</div>
@@ -142,21 +178,21 @@
         <div class="step-icon">💬</div>
         <div class="step-num">02</div>
         <h3>Clique em "Pedir"</h3>
-        <p>Ao clicar no produto, você será direcionado direto ao nosso WhatsApp com o pedido já pronto.</p>
+        <p>Você será direcionado ao nosso WhatsApp com o pedido já pronto.</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card">
         <div class="step-icon">✅</div>
         <div class="step-num">03</div>
         <h3>Confirme e Pague</h3>
-        <p>Alinhamos disponibilidade, valor e forma de pagamento. Tudo transparente e seguro.</p>
+        <p>Alinhamos disponibilidade, valor e forma de pagamento. Tudo transparente.</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card">
         <div class="step-icon">📦</div>
         <div class="step-num">04</div>
         <h3>Receba em Casa</h3>
-        <p>Produto original americano chegando na sua porta. Simples, rápido e garantido.</p>
+        <p>Produto original americano chegando na sua porta. Simples e garantido.</p>
       </div>
     </div>
   </div>
@@ -165,9 +201,13 @@
 <!-- CTA FINAL -->
 <section class="cta-section">
   <div class="container" style="text-align:center">
-    <img src="/images/logo.png" alt="LF Barn" style="width:120px;margin-bottom:1.5rem;opacity:0.9;">
-    <h2 class="section-title">Pronto para o American Lifestyle?</h2>
-    <p class="section-desc" style="margin:1rem auto 2rem;max-width:480px;">Fale com a gente pelo WhatsApp. Atendimento rápido, personalizado e com peças originais dos EUA.</p>
+    <img src="/images/logo.png" alt="LF Barn" style="width:110px;margin-bottom:1.5rem;mix-blend-mode:screen;">
+    <div class="saloon-board section-board" style="margin:0 auto 1.5rem;">
+      <div class="board-inner">
+        <h2 class="board-title" style="font-size:clamp(1.4rem,3vw,2rem)">Pronto para o American Lifestyle?</h2>
+      </div>
+    </div>
+    <p class="section-desc" style="margin:0 auto 2rem;max-width:480px;">Fale com a gente pelo WhatsApp. Atendimento rápido, personalizado e com peças originais dos EUA.</p>
     <a href="https://wa.me/5544999769485" target="_blank" class="btn-wpp btn-lg">
       <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.508 5.835L.057 23.529c-.044.175.005.358.132.49.093.097.218.15.346.15.054 0 .108-.009.16-.026l5.868-1.529A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.96 0-3.81-.54-5.395-1.475l-.387-.23-4.01 1.046 1.003-3.908-.252-.4A9.78 9.78 0 012.182 12C2.182 6.579 6.579 2.182 12 2.182S21.818 6.579 21.818 12 17.421 21.818 12 21.818z"/></svg>
       Falar no WhatsApp Agora
@@ -179,7 +219,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="/images/logo.png" alt="LF Barn" style="width:60px;">
+      <img src="/images/logo.png" alt="LF Barn" style="width:55px;mix-blend-mode:screen;">
       <div>
         <div class="footer-name">LF BARN</div>
         <div class="footer-sub">American Lifestyle · Importação EUA</div>
@@ -191,7 +231,7 @@
       <a href="#como-comprar">Como Comprar</a>
       <a href="https://wa.me/5544999769485" target="_blank">WhatsApp</a>
     </div>
-    <div class="footer-copy">© 2025 LF Barn · Todos os direitos reservados · <a href="/admin" style="color:rgba(245,237,216,0.15);text-decoration:none;font-size:0.6rem;letter-spacing:0.05em;" onmouseover="this.style.color='rgba(245,237,216,0.4)'" onmouseout="this.style.color='rgba(245,237,216,0.15)'">admin</a></div>
+    <div class="footer-copy">© 2025 LF Barn · Todos os direitos reservados · <a href="/admin" style="color:rgba(245,237,216,0.12);text-decoration:none;font-size:0.6rem;" onmouseover="this.style.color='rgba(245,237,216,0.35)'" onmouseout="this.style.color='rgba(245,237,216,0.12)'">admin</a></div>
   </div>
 </footer>
 
