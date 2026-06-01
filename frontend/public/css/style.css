@@ -592,3 +592,18 @@ footer { background: var(--dark); border-top: 2px solid var(--leather); padding:
   .hero-logo { width: min(220px, 82vw); }
   .filter-btn { padding: 0.35rem 0.6rem; font-size: 0.66rem; }
 }
+
+@media (max-width: 640px) {
+  /* Heavier vignette on left side to balance flag canton visually */
+  .hero-overlay {
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(15,10,4,0.15) 0%, rgba(15,10,4,0.7) 55%, rgba(15,10,4,0.92) 100%),
+      linear-gradient(90deg, rgba(15,10,4,0.55) 0%, rgba(15,10,4,0.1) 45%, rgba(15,10,4,0.1) 100%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.05) 2px, rgba(0,0,0,0.05) 4px);
+  }
+  /* Force logo to dead center */
+  .hero { justify-content: center; }
+  .hero-content { margin: 0 auto; max-width: 100%; padding: 0 1rem; }
+  .hero-logo { margin-left: auto !important; margin-right: auto !important; }
+}
+
