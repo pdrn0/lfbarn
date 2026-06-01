@@ -159,36 +159,105 @@ nav {
 /* ─── SALOON BOARD ─── */
 .saloon-board {
   display: inline-block; position: relative;
-  background:
-    linear-gradient(180deg, #5c3318 0%, #3d2010 30%, #2e1808 60%, #3d2010 80%, #4a2810 100%);
-  padding: 0.8rem 2rem 0.9rem;
-  border-top: 3px solid #7a4a28;
-  border-bottom: 3px solid #1a0c04;
-  border-left: 4px solid #6a3a20;
-  border-right: 4px solid #1a0c04;
+  /* Base wood color - warm dark mahogany */
+  background-color: #3a1c08;
+  /* Layered wood texture: base tone + knot darks + grain streaks + highlight edge */
+  background-image:
+    /* Top highlight edge (light catches top) */
+    linear-gradient(180deg,
+      rgba(160,90,40,0.55) 0px, rgba(120,60,20,0.2) 3px,
+      transparent 18px, transparent calc(100% - 14px),
+      rgba(0,0,0,0.45) calc(100% - 4px), rgba(0,0,0,0.6) 100%
+    ),
+    /* Left highlight edge */
+    linear-gradient(90deg,
+      rgba(140,80,35,0.4) 0px, rgba(100,50,15,0.15) 4px,
+      transparent 20px, transparent calc(100% - 16px),
+      rgba(0,0,0,0.5) calc(100% - 3px), rgba(0,0,0,0.65) 100%
+    ),
+    /* Fine grain lines — tight horizontal streaks */
+    repeating-linear-gradient(
+      178deg,
+      transparent 0px, transparent 3px,
+      rgba(0,0,0,0.13) 3px, rgba(0,0,0,0.13) 4px,
+      transparent 4px, transparent 7px,
+      rgba(80,35,8,0.18) 7px, rgba(80,35,8,0.18) 8px,
+      transparent 8px, transparent 14px,
+      rgba(0,0,0,0.08) 14px, rgba(0,0,0,0.08) 15px
+    ),
+    /* Broader grain bands — the main wood character */
+    repeating-linear-gradient(
+      176deg,
+      #3a1c08 0px,  #3a1c08 12px,
+      #2e1506 12px, #2e1506 14px,
+      #442010 14px, #442010 22px,
+      #3a1c08 22px, #3a1c08 30px,
+      #321808 30px, #321808 32px,
+      #4a2412 32px, #4a2412 38px,
+      #3a1c08 38px, #3a1c08 48px,
+      #281404 48px, #281404 50px,
+      #3e1e0a 50px, #3e1e0a 60px
+    ),
+    /* Deep knot shadows scattered */
+    radial-gradient(ellipse 28% 8% at 22% 35%, rgba(15,6,2,0.5) 0%, transparent 100%),
+    radial-gradient(ellipse 18% 6% at 75% 60%, rgba(15,6,2,0.45) 0%, transparent 100%),
+    radial-gradient(ellipse 22% 7% at 55% 20%, rgba(20,8,2,0.35) 0%, transparent 100%);
+
+  padding: 0.85rem 2.2rem 1rem;
+
+  /* Outer frame: beveled wood edge */
+  border-top:    3px solid #9a5c2a;
+  border-left:   3px solid #7a4418;
+  border-bottom: 4px solid #1a0800;
+  border-right:  4px solid #120600;
+
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    inset 0 -1px 0 rgba(0,0,0,0.4),
-    4px 6px 18px rgba(0,0,0,0.7),
-    -1px -1px 0 #7a4a28;
+    /* Inner bevel - light catch on inside top */
+    inset 0 2px 0   rgba(180,110,50,0.22),
+    inset 2px 0 0   rgba(160,90,40,0.12),
+    /* Inner shadow - depth at bottom */
+    inset 0 -3px 6px rgba(0,0,0,0.55),
+    inset -2px 0 4px rgba(0,0,0,0.35),
+    /* Outer drop shadow */
+    3px 5px 14px rgba(0,0,0,0.75),
+    6px 10px 28px rgba(0,0,0,0.45),
+    /* Subtle ambient glow from the warm wood */
+    0 0 0 1px rgba(80,35,8,0.6);
 }
-/* Wood grain lines */
+
+/* Worn varnish overlay + fine scratches */
 .saloon-board::before {
   content: '';
-  position: absolute; inset: 3px;
-  background: repeating-linear-gradient(
-    175deg,
-    transparent, transparent 8px,
-    rgba(0,0,0,0.07) 8px, rgba(0,0,0,0.07) 9px
-  );
-  pointer-events: none;
+  position: absolute; inset: 0;
+  background:
+    /* Varnish sheen — diagonal highlight */
+    linear-gradient(
+      122deg,
+      transparent 0%, transparent 38%,
+      rgba(255,220,140,0.04) 42%, rgba(255,220,140,0.08) 48%,
+      rgba(255,220,140,0.03) 52%, transparent 56%
+    ),
+    /* Fine scratch lines across grain */
+    repeating-linear-gradient(
+      88deg,
+      transparent 0px, transparent 28px,
+      rgba(255,255,255,0.025) 28px, rgba(255,255,255,0.025) 29px,
+      transparent 29px, transparent 58px,
+      rgba(0,0,0,0.06) 58px, rgba(0,0,0,0.06) 59px
+    );
+  pointer-events: none; border-radius: inherit;
 }
-/* Nail holes */
+
+/* Nail heads — one each side */
 .saloon-board::after {
-  content: '● ●';
-  position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%);
-  display: flex; justify-content: space-between; padding: 0 6px;
-  font-size: 0.35rem; color: rgba(0,0,0,0.5);
+  content: '';
+  position: absolute;
+  top: 50%; left: 9px; right: 9px;
+  transform: translateY(-50%);
+  height: 8px;
+  background:
+    radial-gradient(circle 4px at 0px 4px,   #6a3a18 30%, #2a1006 55%, rgba(0,0,0,0) 100%),
+    radial-gradient(circle 4px at 100% 4px,  #6a3a18 30%, #2a1006 55%, rgba(0,0,0,0) 100%);
   pointer-events: none;
 }
 
