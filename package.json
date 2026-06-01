@@ -1,0 +1,11 @@
+{
+  "name": "lfbarn",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "install": "cd backend && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
