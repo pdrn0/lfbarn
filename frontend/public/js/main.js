@@ -140,5 +140,58 @@ function escHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+
+// === SEARCH ===
+let searchTimeout = null;
+
+document.getElementById('search-input').addEventListener('input', function() {
+  const q = this.value.trim();
+  document.getElementById('search-clear').style.display = q ? 'block' : 'none';
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => filterBySearch(q), 250);
+});
+
+function clearSearch() {
+  const input = document.getElementById('search-input');
+  input.value = '';
+  document.getElementById('search-clear').style.display = 'none';
+  input.focus();
+  filterBySearch('');
+}
+
+function filterBySearch(q) {
+  if (!q) {
+    renderProducts(allProducts);
+    return;
+  }
+  const term = q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const filtered = allProducts.filter(p => {
+    const name = (p.name || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const desc = (p.description || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const cat  = (p.category || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return name.includes(term) || desc.includes(term) || cat.includes(term);
+  });
+  
+  if (!filtered.length) {
+    document.getElementById('products-grid').innerHTML = `
+      <div class="search-no-results">
+        <span>🔍</span>
+        Nenhum produto encontrado para "<strong style="color:var(--tan)">${escHtml(q)}</strong>".<br>
+        Tente outro termo ou <a href="https://wa.me/5544999769485?text=Olá!%20Procuro%20por:%20${encodeURIComponent(q)}" target="_blank" style="color:var(--rust)">pergunte no WhatsApp</a>.
+      </div>`;
+    return;
+  }
+  renderProducts(filtered);
+}
+
+// Clear search when changing category filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-clear').style.display = 'none';
+  });
+});
+
+
 // Init
 loadProducts();
