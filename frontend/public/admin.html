@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LF Barn – Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="login-screen">
+  <div class="login-card">
+    <img src="/images/logo.png" alt="LF Barn" class="login-logo">
+    <h1 class="login-title">Painel Admin</h1>
+    <p class="login-sub">LF Barn · American Lifestyle</p>
+    <div id="login-error" class="login-error" style="display:none"></div>
+    <div class="field-group">
+      <label>E-mail</label>
+      <input type="email" id="login-email" value="admin@lfbarn.com" placeholder="admin@lfbarn.com">
+    </div>
+    <div class="field-group">
+      <label>Senha</label>
+      <input type="password" id="login-pass" placeholder="••••••••">
+    </div>
+    <button class="btn-full" onclick="doLogin()">Entrar no Painel</button>
+    <a href="/" class="back-link">← Voltar ao site</a>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-panel" style="display:none">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="/images/logo.png" alt="LF Barn" style="width:52px;">
+      <div>
+        <div class="sidebar-name">LF BARN</div>
+        <div class="sidebar-sub">Admin Panel</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" onclick="showTab('dashboard')">📊 Dashboard</button>
+      <button class="nav-item" onclick="showTab('products')">📦 Produtos</button>
+      <button class="nav-item" onclick="showTab('add-product')">➕ Novo Produto</button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="sidebar-link">🌐 Ver Site</a>
+      <button class="sidebar-link" onclick="doLogout()">🚪 Sair</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+
+    <!-- DASHBOARD TAB -->
+    <div id="tab-dashboard" class="tab-content active">
+      <div class="page-header">
+        <h2>Dashboard</h2>
+        <span class="page-sub">Métricas da loja em tempo real</span>
+      </div>
+
+      <div id="metrics-loading" class="center-msg">Carregando métricas...</div>
+
+      <div id="metrics-content" style="display:none">
+        <div class="stats-row" id="stats-row"></div>
+
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card-title">🔥 Produtos Mais Vistos</div>
+            <div id="top-viewed"></div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-title">🛒 Produtos Mais Pedidos</div>
+            <div id="top-ordered"></div>
+          </div>
+        </div>
+
+        <div class="dash-grid dash-grid-2">
+          <div class="dash-card">
+            <div class="dash-card-title">📂 Desempenho por Categoria</div>
+            <div id="by-category"></div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card-title">🎨 Desempenho por Criativo</div>
+            <div id="by-creative"></div>
+            <p class="hint-text">Use <code>?c=nome-criativo</code> nos links para rastrear criativos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS TAB -->
+    <div id="tab-products" class="tab-content">
+      <div class="page-header">
+        <h2>Produtos</h2>
+        <button class="btn-action" onclick="showTab('add-product')">+ Novo Produto</button>
+      </div>
+      <div id="admin-products-list">
+        <div class="center-msg">Carregando produtos...</div>
+      </div>
+    </div>
+
+    <!-- ADD PRODUCT TAB -->
+    <div id="tab-add-product" class="tab-content">
+      <div class="page-header">
+        <h2 id="product-form-title">Novo Produto</h2>
+        <span class="page-sub">Preencha os campos abaixo</span>
+      </div>
+      <div class="form-card">
+        <input type="hidden" id="edit-id">
+        <div class="form-grid">
+          <div class="field-group full">
+            <label>Nome do Produto *</label>
+            <input type="text" id="f-name" placeholder="Ex: Boné American Ranch">
+          </div>
+          <div class="field-group full">
+            <label>Descrição</label>
+            <textarea id="f-desc" rows="3" placeholder="Descreva o produto..."></textarea>
+          </div>
+          <div class="field-group">
+            <label>Preço (R$)</label>
+            <input type="number" id="f-price" placeholder="199.90" step="0.01">
+          </div>
+          <div class="field-group">
+            <label>Categoria *</label>
+            <select id="f-category">
+              <option value="">Selecione...</option>
+              <option value="Outdoor">🏕️ Outdoor</option>
+              <option value="Ranch">🐂 Ranch</option>
+              <option value="Fishing">🎣 Fishing</option>
+              <option value="Lifestyle">🇺🇸 Lifestyle</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Criativo / Campanha</label>
+            <input type="text" id="f-creative" placeholder="Ex: criativo-instagram-1">
+          </div>
+          <div class="field-group">
+            <label>Foto do Produto</label>
+            <input type="file" id="f-image" accept="image/*">
+            <div id="img-preview" class="img-preview" style="display:none"><img id="preview-img" src="" alt=""></div>
+          </div>
+          <div class="field-group" id="active-field" style="display:none">
+            <label>Status</label>
+            <select id="f-active">
+              <option value="true">✅ Ativo (visível no site)</option>
+              <option value="false">🔴 Inativo (oculto)</option>
+            </select>
+          </div>
+        </div>
+        <div id="form-error" class="form-error" style="display:none"></div>
+        <div class="form-actions">
+          <button class="btn-action" onclick="submitProduct()">💾 Salvar Produto</button>
+          <button class="btn-cancel" onclick="clearForm(); showTab('products')">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
