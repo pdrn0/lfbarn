@@ -72,6 +72,16 @@
     <h2 class="section-title">Produtos em Destaque</h2>
     <div class="section-line"></div>
 
+    
+    <!-- Search Bar -->
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Buscar produto... (ex: chapéu, bota, pesca)" autocomplete="off">
+        <button id="search-clear" style="display:none" onclick="clearSearch()">✕</button>
+      </div>
+    </div>
+
     <!-- Filters -->
     <div class="filters">
       <button class="filter-btn active" data-cat="">Todos</button>
@@ -181,7 +191,7 @@
       <a href="#como-comprar">Como Comprar</a>
       <a href="https://wa.me/5544999769485" target="_blank">WhatsApp</a>
     </div>
-    <div class="footer-copy">© 2025 LF Barn · Todos os direitos reservados</div>
+    <div class="footer-copy">© 2025 LF Barn · Todos os direitos reservados · <a href="/admin" style="color:rgba(245,237,216,0.15);text-decoration:none;font-size:0.6rem;letter-spacing:0.05em;" onmouseover="this.style.color='rgba(245,237,216,0.4)'" onmouseout="this.style.color='rgba(245,237,216,0.15)'">admin</a></div>
   </div>
 </footer>
 
@@ -189,7 +199,7 @@
 <div class="modal-overlay" id="product-modal">
   <div class="modal" id="modal-content"></div>
 </div>
-<a href="/admin" class="admin-link">⚙ Admin</a>
+
 <script src="/js/main.js"></script>
 </body>
 </html>
