@@ -108,7 +108,7 @@ nav {
     );
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 700px; }
+.hero-content { position: relative; z-index: 2; max-width: 700px; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
 .hero-badge-wrap { margin-bottom: 1.5rem; }
 .hero-badge {
@@ -530,10 +530,10 @@ footer { background: var(--dark); border-top: 2px solid var(--leather); padding:
   .container { padding: 0; }
 
   /* SALOON BOARD */
-  .saloon-board { width: 90%; max-width: 340px; padding: 0.65rem 1.2rem; display: block; margin-left: auto; margin-right: auto; }
+  .saloon-board { width: 90%; max-width: 340px; padding: 0.65rem 1.2rem; display: block; margin-left: auto; margin-right: auto; text-align: center; }
   .board-title { font-size: 1.25rem; }
   .board-label { font-size: 0.55rem; letter-spacing: 0.25em; }
-  .section-board--left { margin: 0 0 1.5rem; }
+  .section-board--left { margin: 0 auto 1.5rem; text-align: center; }
 
   /* SEARCH */
   .search-wrap { margin-bottom: 1rem; }
